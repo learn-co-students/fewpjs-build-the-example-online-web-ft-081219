@@ -8,11 +8,16 @@ let color = {
   "red" : "",
   "" : "red"
 }
+let glyphs = {
+  "♡" : "♥",
+  "♥" : "♡"
+}
 
 
 for (let heart of likes) {
   heart.addEventListener('click', e => {
     e.target.style.color = color[e.target.style.color]
+    heart.innerText = glyphs[heart.innerText];
   })
 }
 
