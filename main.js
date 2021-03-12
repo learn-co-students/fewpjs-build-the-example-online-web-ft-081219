@@ -1,10 +1,25 @@
 // Defining text characters for the empty and full hearts for you to use later.
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
+const modal = document.getElementById('modal')
+const likes = document.querySelectorAll('.like-glyph')
 
-// Your JavaScript code goes here!
+let color = {
+  "red" : "",
+  "" : "red"
+}
+let glyphs = {
+  "♡" : "♥",
+  "♥" : "♡"
+}
 
 
+for (let heart of likes) {
+  heart.addEventListener('click', e => {
+    e.target.style.color = color[e.target.style.color]
+    heart.innerText = glyphs[heart.innerText];
+  })
+}
 
 
 //------------------------------------------------------------------------------
